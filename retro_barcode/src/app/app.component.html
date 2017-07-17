@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<div *ngFor='let color of randomColors'
+  [ngStyle]="{
+    'background-color': colors[color],
+    'height': '50px',
+    'width': '50px',
+    'display': 'inline-block',
+    'border': '1px dotted black'
+  }"
+></div>
+
