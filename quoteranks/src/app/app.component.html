@@ -1,0 +1,2 @@
+<app-quoting [quotes]='quotes|sort' [isValid]='isValid' [numberKey]='numberKey' (addingquote)='addquote($event)'></app-quoting>
+<app-ranking [(quotes)]='quotes' [numberKey]='numberKey' (up)='voteUp($event)' (down)='voteDown($event)' (deleteQuote)='delete($event)'></app-ranking>
