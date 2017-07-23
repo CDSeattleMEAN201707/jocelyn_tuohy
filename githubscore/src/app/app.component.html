@@ -1,0 +1,20 @@
+<form #usernameForm='ngForm' (submit)='calculateResults()'>
+  <fieldset>
+    <legend>{{title}}</legend>
+    <div id="leftBit">
+      <label for="githubUsername">GitHub Username:</label>
+      <input type="text" name="githubUsername" id="githubUsername"
+        [(ngModel)]='githubUsername' required>
+      <button [disabled]='!usernameForm.form.valid'>Calculate My GitHub Score</button>
+    </div>
+    <div id="rightBit" *ngIf='found'>
+      <h1>Your Score: {{score}}</h1>
+       <h2 [ngStyle]="{
+         'color': score|scoreColor
+       }">{{score|scoreMessage}}</h2> 
+    </div>
+    <div id="rightBit" *ngIf='notFound'>
+      <h1>User does not exist; pick a different GitHub username.</h1>
+    </div>
+  </fieldset>
+</form>
